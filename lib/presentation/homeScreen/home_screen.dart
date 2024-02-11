@@ -1,36 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:remainder_flutter/presentation/homeScreen/controllers/home_controller.dart';
+import 'package:remainder_flutter/core/theme/app_colors.dart';
+import 'package:remainder_flutter/presentation/homeScreen/sections/app_bottom_bar.dart';
+import 'package:remainder_flutter/presentation/homeScreen/sections/remainderList/remainder_list.dart';
+import 'package:remainder_flutter/presentation/homeScreen/sections/top_app_bar.dart';
 
-class HomeScreen extends HookConsumerWidget {
+import '../googleSheet/google_sheet_input.dart';
+
+class HomeScreen extends StatelessWidget {
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     // TODO: implement build
 
-    final homeController = ref.watch(homeControllerProvider);
+    SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(statusBarColor: AppColor.primaryColor));
 
-    return Scaffold(
-      body: Column(
-        children: [
-          Center(
-            child: homeController.when(
-                initial: () => const CircularProgressIndicator(),
-                loading: () => const Text("Loading..."),
-                success: (homeModel) {
-                  return Text(homeModel.title);
-                },
-                error: () {
-                  return const Text("Error");
-                }),
-          ),
-          ElevatedButton(
-              onPressed: () {
-                //  homeControllerProvider.notifier.
-                ref.read(homeControllerProvider.notifier).addNewData();
-              },
-              child: Text("Add New Data")),
-        ],
+    return const Scaffold(
+      bottomNavigationBar: AppBottomBar(),
+      body: SafeArea(
+        child: Column(
+          children: [
+            TopAppBar(),
+            Expanded(
+              child: RemainderListScreen(),
+            )
+          ],
+        ),
       ),
     );
   }

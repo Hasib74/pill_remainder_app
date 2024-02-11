@@ -1,0 +1,4 @@
+mixin LifecycleMixin {
+  dispose();
+  init();
+}

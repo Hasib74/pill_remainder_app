@@ -8,9 +8,8 @@ class SplashScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // ref.read(routerProvider).go(AppRoutes.homeScreen);
-
       ref.read(routerProvider).go(AppRoutes.homeScreen);
     });
 

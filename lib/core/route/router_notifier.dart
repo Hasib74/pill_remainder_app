@@ -5,6 +5,7 @@ import 'package:remainder_flutter/domain/authentication.dart';
 import 'package:remainder_flutter/presentation/homeScreen/home_screen.dart';
 import 'package:remainder_flutter/presentation/splash_screen.dart';
 
+import '../../presentation/onBoarding/on_boarding_screen.dart';
 import 'app_routes.dart';
 
 class RouterNotifier extends ChangeNotifier {
@@ -15,6 +16,11 @@ class RouterNotifier extends ChangeNotifier {
       print("checkAuthorizeProvider Previous :  ${previous}");
       print("checkAuthorizeProvider Next : ${next}");
     });
+
+
+
+
+
     /*_ref.listen<AuthState>(
       authNotifierProvider,
           (_, __) => notifyListeners(),
@@ -44,6 +50,10 @@ class RouterNotifier extends ChangeNotifier {
         path: AppRoutes.homeScreen,
         builder: (context, state) => HomeScreen(),
       ),
+      GoRoute(
+          path: AppRoutes.onBoarding,
+          name: AppRoutes.onBoarding,
+          builder: (context, state) => const ObBoardingScreen()),
     ];
   }
 }

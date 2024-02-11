@@ -11,15 +11,9 @@ final routerProvider = Provider<GoRouter>((ref) {
     print("routerProvider : ${router.routes}");
   });
   return GoRouter(
-      routes: router.routes,
-      initialLocation: AppRoutes.splashScreen,
-      refreshListenable: router ,
-      redirect: (BuildContext context, GoRouterState state) {
-
-
-
-
-      },
-
+    routes: router.routes,
+    initialLocation: AppRoutes.splashScreen,
+    refreshListenable: router,
+    redirect: (BuildContext context, GoRouterState state) {},
   );
 });

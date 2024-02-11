@@ -1,0 +1,12 @@
+{
+  "onBoarding": "Allowing users to input their medication schedule, including dosage and frequency",
+  "@onBoarding": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "onBoardingTwo": "Sending timely reminders and notifications to take medications",
+  "onBoardingThree": "Maintaining a list of all medications, including their names, dosage, and instructions.",
+  "onBoardingFour": "Notifying users when it's time to refill their prescriptions.",
+  "onBoardingFive": " Storing and displaying contact information for healthcare providers.",
+  "onBoardingSix": "Allowing users to track the actual intake of medication over time.",
+  "onBoardingSeven": "Optionally, keeping records of health-related "
+}
