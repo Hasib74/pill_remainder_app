@@ -7,7 +7,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'app_flavor.dart';
 
 abstract class Env {
-  Env() {
+  Flavor? flavor;
+
+  Env({this.flavor}) {
     _init();
   }
 
